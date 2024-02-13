@@ -1,0 +1,4 @@
+D:\Online Banking Project\bank\bin\Debug\bank.exe
+D:\Online Banking Project\bank\bin\Debug\Bank_Bussiness_Layer.dll
+D:\Online Banking Project\bank\bin\Debug\Guna.UI2.dll
+D:\Online Banking Project\bank\bin\Debug\Bank_DataAccess_Layer.dll
