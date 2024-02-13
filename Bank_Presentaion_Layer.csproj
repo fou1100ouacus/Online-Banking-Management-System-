@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F7EB148-D99E-4113-976D-3CABF9071FAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>bank</RootNamespace>
+    <AssemblyName>bank</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BankMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BankMain.Designer.cs">
+      <DependentUpon>BankMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\frmAddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\frmAddClient.Designer.cs">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\frmCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\frmCard.Designer.cs">
+      <DependentUpon>frmCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\frmGetIDcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\frmGetIDcs.Designer.cs">
+      <DependentUpon>frmGetIDcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\frmDeposit_Withdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\frmDeposit_Withdraw.Designer.cs">
+      <DependentUpon>frmDeposit_Withdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\frmListTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\frmListTransactions.Designer.cs">
+      <DependentUpon>frmListTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerficationCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerficationCode.Designer.cs">
+      <DependentUpon>frmVerficationCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\frmGetuserIDcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\frmGetuserIDcs.Designer.cs">
+      <DependentUpon>frmGetuserIDcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\frmUserCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\frmUserCard.Designer.cs">
+      <DependentUpon>frmUserCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coins\frmATM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coins\frmATM.Designer.cs">
+      <DependentUpon>frmATM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\frmClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\frmClients.Designer.cs">
+      <DependentUpon>frmClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIGN_LOG\frmdashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIGN_LOG\frmdashboard.Designer.cs">
+      <DependentUpon>frmdashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\frmListClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\frmListClient.Designer.cs">
+      <DependentUpon>frmListClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\frmListUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\frmListUsers.Designer.cs">
+      <DependentUpon>frmListUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coins\frmOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coins\frmOperations.Designer.cs">
+      <DependentUpon>frmOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\frmTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\frmTransactions.Designer.cs">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\Transefer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coins\Transactions Forms\Transefer.Designer.cs">
+      <DependentUpon>Transefer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIGN_LOG\SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIGN_LOG\SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIGN_LOG\Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIGN_LOG\Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIGN_LOG\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIGN_LOG\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BankMain.resx">
+      <DependentUpon>BankMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\frmAddClient.resx">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\frmListClient.resx">
+      <DependentUpon>frmListClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coins\frmATM.resx">
+      <DependentUpon>frmATM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\frmClients.resx">
+      <DependentUpon>frmClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\frmCard.resx">
+      <DependentUpon>frmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\frmGetIDcs.resx">
+      <DependentUpon>frmGetIDcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coins\Transactions Forms\frmDeposit_Withdraw.resx">
+      <DependentUpon>frmDeposit_Withdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coins\Transactions Forms\Transefer.resx">
+      <DependentUpon>Transefer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coins\Transactions Forms\frmListTransactions.resx">
+      <DependentUpon>frmListTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerficationCode.resx">
+      <DependentUpon>frmVerficationCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\frmGetuserIDcs.resx">
+      <DependentUpon>frmGetuserIDcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\frmUserCard.resx">
+      <DependentUpon>frmUserCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIGN_LOG\frmdashboard.resx">
+      <DependentUpon>frmdashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coins\frmOperations.resx">
+      <DependentUpon>frmOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coins\Transactions Forms\frmTransactions.resx">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\frmListUsers.resx">
+      <DependentUpon>frmListUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIGN_LOG\Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIGN_LOG\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SIGN_LOG\SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wire Transfers.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\How to Draw a Bank.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACH.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACH1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dashboard-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contacts-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-woman-48 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sync-settings-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free Vector _ Illustrated business person meditating.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A Business Bank Account.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download free psd _ image of Bank outline icon psd financial symbol by Aew about money icon, bank, bank icon, accounting, and dollar  icon 2890882.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\operation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_4140037.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7124045_logout_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_41400371.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d46953c6b32bdbc65f3f58fe9cf7524a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free Vector _ Saving money concept illustration.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free Vector _ Money lending abstract concept vector illustration_ small money lenders, private individuals loans, short term financing, commercial and industrial bank credit, working capital abstract metaphor_.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\641702.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\571449bb3ea06fb22699990dc1123cb4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\728933_document_edit_file_page_paper_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\728933_document_edit_file_page_paper_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5011352_bin_delete_recycle_trash_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5094671_find_glass_search_zoom_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clients.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-admin-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contacts-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-calendar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wire Transfers1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pencil-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5094671_find_glass_search_zoom_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free Vector _ Flat travel background.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clients1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-admin-settings-male-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ae18e6d053aa8f88ba741cf02f03f179.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abstract Dollar Or Money Gradient Color Vector Template Download on Pngtree.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A Business Bank Account1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finance Customizable Disproportionate Illustrations _ Cuate Style.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\USED\Revision Course 18\Bank_Bussiness_Layer\Bank_Bussiness_Layer.csproj">
+      <Project>{c85882b8-aafa-465f-b2da-50fa5bf8c1aa}</Project>
+      <Name>Bank_Bussiness_Layer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendar-plus-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\728933_document_edit_file_page_paper_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_41400372.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A Complete Guide to What Is Decentralized Finance.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contacts-642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verfiy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pay By Phone.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Premium Vector _ Cartoon happy businessman with big bonus money bag.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e3a1152efc4bdd03887eb5a8ad08947a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free Vector _ Saving money concept illustration1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Payment By ACH.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\International Payments.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2867866_bookmark_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7124045_logout_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\How to Draw a Bank1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online Banking.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money Clipart Vector, Money, Money Clipart, Fund, Transfer PNG Image For Free Download %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dual USB wall Chargers US Plug 2_1A AC Power Adapter 2 port for huawei Iphone Samsung LG.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-admin-1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cash-in-hand-16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
