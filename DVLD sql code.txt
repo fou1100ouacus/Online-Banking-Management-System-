@@ -1,0 +1,154 @@
+CREATE TABLE Person
+(
+  FirstName INT NOT NULL,
+  LastName INT NOT NULL,
+  ThirdName INT NOT NULL,
+  SecondName INT NOT NULL,
+  Gender INT NOT NULL,
+  Address INT NOT NULL,
+  NationalNum INT NOT NULL,
+  Email INT NOT NULL,
+  Phone INT NOT NULL,
+  Phote INT NOT NULL,
+  PersonID INT NOT NULL,
+  nationalCountryID INT NOT NULL,
+  PRIMARY KEY (PersonID)
+);
+
+CREATE TABLE APP_Type
+(
+  AppTypeID INT NOT NULL,
+  AppFees INT NOT NULL,
+  AppTypeTitle INT NOT NULL,
+  PRIMARY KEY (AppTypeID)
+);
+
+CREATE TABLE License_Classes
+(
+  ValidityLength INT NOT NULL,
+  ClassDescription INT NOT NULL,
+  MinimumAllowedAge INT NOT NULL,
+  LicenseClassID INT NOT NULL,
+  ClassFees INT NOT NULL,
+  className INT NOT NULL,
+  PRIMARY KEY (LicenseClassID)
+);
+
+CREATE TABLE TestType
+(
+  TestTypeID INT NOT NULL,
+  TestFees INT NOT NULL,
+  TesttypeTitle INT NOT NULL,
+  TestTypeDescription INT NOT NULL,
+  PRIMARY KEY (TestTypeID)
+);
+
+CREATE TABLE User
+(
+  UserName INT NOT NULL,
+  Password INT NOT NULL,
+  UserID INT NOT NULL,
+  Is_Active INT NOT NULL,
+  PersonID INT NOT NULL,
+  PRIMARY KEY (UserID),
+  FOREIGN KEY (PersonID) REFERENCES Person(PersonID)
+);
+
+CREATE TABLE Application
+(
+  AppFees INT NOT NULL,
+  AppDate INT NOT NULL,
+  ApplicationID INT NOT NULL,
+  appPersonID INT NOT NULL,
+  CreatedByUserID INT NOT NULL,
+  LastStatusDate INT NOT NULL,
+  AppTypeID INT NOT NULL,
+  PersonID INT NOT NULL,
+  AppTypeID INT NOT NULL,
+  PRIMARY KEY (ApplicationID),
+  FOREIGN KEY (PersonID) REFERENCES Person(PersonID),
+  FOREIGN KEY (AppTypeID) REFERENCES APP_Type(AppTypeID)
+);
+
+CREATE TABLE LocalDrivingLicense
+(
+  LocalLicenseID INT NOT NULL,
+  LicesnesClassID INT NOT NULL,
+  AppLicenseID INT NOT NULL,
+  LicenseClassID INT NOT NULL,
+  ApplicationID INT NOT NULL,
+  PRIMARY KEY (LocalLicenseID),
+  FOREIGN KEY (LicenseClassID) REFERENCES License_Classes(LicenseClassID),
+  FOREIGN KEY (ApplicationID) REFERENCES Application(ApplicationID)
+);
+
+CREATE TABLE TestAppointment
+(
+  AppointmentID INT NOT NULL,
+  TestAppFees INT NOT NULL,
+  CreatedUserID INT NOT NULL,
+  localDrivingLicenseID INT NOT NULL,
+  AppointmentDate INT NOT NULL,
+  IsLocked INT NOT NULL,
+  RetakeTestAPPID INT NOT NULL,
+  TestTypeID INT NOT NULL,
+  ApplicationID INT NOT NULL,
+  TestTypeID INT NOT NULL,
+  LocalLicenseID INT NOT NULL,
+  PRIMARY KEY (AppointmentID),
+  FOREIGN KEY (ApplicationID) REFERENCES Application(ApplicationID),
+  FOREIGN KEY (TestTypeID) REFERENCES TestType(TestTypeID),
+  FOREIGN KEY (LocalLicenseID) REFERENCES LocalDrivingLicense(LocalLicenseID)
+);
+
+CREATE TABLE Driver
+(
+  DriverID INT NOT NULL,
+  LicenseID INT NOT NULL,
+  PersonID INT NOT NULL,
+  PersonID INT NOT NULL,
+  CreatedByUserID INT NOT NULL,
+  PersonID INT NOT NULL,
+  UserID INT NOT NULL,
+  PRIMARY KEY (DriverID),
+  FOREIGN KEY (PersonID) REFERENCES Person(PersonID),
+  FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Test
+(
+  TestID INT NOT NULL,
+  TestAppointmentID INT NOT NULL,
+  Result INT NOT NULL,
+  CreatedByUserID INT NOT NULL,
+  Notes INT NOT NULL,
+  AppointmentID INT NOT NULL,
+  FOREIGN KEY (AppointmentID) REFERENCES TestAppointment(AppointmentID)
+);
+
+CREATE TABLE Licenses
+(
+  Notes INT NOT NULL,
+  LicenseID INT NOT NULL,
+  APPid INT NOT NULL,
+  LicenseClassID INT NOT NULL,
+  DriverID INT NOT NULL,
+  IssueDate INT NOT NULL,
+  ExpirationDate INT NOT NULL,
+  IssueReason INT NOT NULL,
+  Fees INT NOT NULL,
+  IsActive INT NOT NULL,
+  CreatedByUserID INT NOT NULL,
+  ApplicationID INT NOT NULL,
+  DriverID INT NOT NULL,
+  FOREIGN KEY (ApplicationID) REFERENCES Application(ApplicationID),
+  FOREIGN KEY (DriverID) REFERENCES Driver(DriverID)
+);
+
+CREATE TABLE Application_ApplicationStatus
+(
+  ApplicationStatus INT NOT NULL,
+  ApplicationID INT NOT NULL,
+  PRIMARY KEY (ApplicationStatus, ApplicationID),
+  FOREIGN KEY (ApplicationID) REFERENCES Application(ApplicationID)
+);
