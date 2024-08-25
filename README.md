@@ -4,7 +4,10 @@
  using 3-Tier Architecture ,C# and SQL server and .NET Framework**.
 
 # Overview 
- 
+### The Online Banking System is a comprehensive platform that allows users to manage 
+### their bank accounts, perform transactions, and access various banking services online.
+### This system is designed to be user-friendly, secure, and efficient, ensuring a seamless banking experience.
+
  ## Online Banking Consists of 3-main components:
   ###  Data Access Layer:
  - Includes a CRUD Princple for each element of project.
